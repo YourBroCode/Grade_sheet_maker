@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Sheet Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Grade Sheet Maker</h1>
+        <form id="gradeForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="rollNo">Roll No:</label>
+                <input type="text" id="rollNo" required>
+            </div>
+            <div class="form-group">
+                <label for="class">Class:</label>
+                <input type="text" id="class" required>
+            </div>
+            <div class="form-group">
+                <label for="school">School:</label>
+                <input type="text" id="school" required>
+            </div>
+            <div class="form-group">
+                <label for="logo">Background Logo:</label>
+                <input type="file" id="logo" accept="image/*">
+            </div>
+            <div class="subject-details">
+                <h2>Subject Details</h2>
+                <div class="subject">
+                    <input type="text" class="subject-name" placeholder="Subject Name" required>
+                    <input type="number" class="subject-marks" placeholder="Marks" min="0" max="100" required>
+                </div>
+                <!-- Add more subjects dynamically using JavaScript -->
+            </div>
+            <button type="button" id="addSubject">Add Subject</button>
+            <button type="submit">Generate Grade Sheet</button>
+        </form>
+        <div id="pdfContainer"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="back_end.js"></script>
+</body>
+</html>

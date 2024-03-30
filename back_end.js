@@ -43,6 +43,10 @@ function generatePDF(name, rollNo, className, school, logo, subjectDetails) {
     var pageHeight = doc.internal.pageSize.height;
     var margin = 15;
 
+    var backgroundColor = '#f0f0f0';
+    doc.setFillColor(backgroundColor); // Set fill color
+    // doc.rect(0, 0, pageWidth, pageHeight, 'F'); 
+
     doc.setLineWidth(0.5);
     doc.rect(margin, margin, pageWidth - 2 * margin, pageHeight - 2 * margin);
 
@@ -68,13 +72,14 @@ function generatePDF(name, rollNo, className, school, logo, subjectDetails) {
     function addContentToPDF() {
         // Add content to PDF
         // var max_marks = 100;
-        doc.setFontSize(20);
-        doc.setTextColor(0, 0, 0); // Set text color to black
+        doc.setFontSize(30);
+        doc.setTextColor(76,31,25); // Set text color to black
 
         doc.setLineWidth(0.5);
         // doc.line(20, 15, 190, 15);
+        doc.setFontStyle('italic');
 
-        doc.text(80, y, 'Grade Sheet');
+        doc.text(70, y, 'Report Card');
 
         // doc.line(20, 30, 190, 30);
 
